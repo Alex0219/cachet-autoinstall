@@ -13,3 +13,7 @@ chmod +x ./cachet-install.sh
 After the installation is complete, visit http://yourip in your browser.
 
 The mysql password is saved under /home/cachet-autoinstall.txt
+
+See this for an example automated installation of CachetHQ
+
+https://asciinema.org/a/ovK1xEMyjU3Bs4z4KlyhvAtFq
