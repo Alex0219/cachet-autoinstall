@@ -10,7 +10,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y vim git sudo nginx
 
 # Install PHP modules
-sudo apt install -y php-xml php-gd php-zip php-mbstring php-mysql php-pgsql php-sqlite3 php-apcu php-gd php-fpm 
+sudo apt install -y php7.0 php-xml php-gd php-zip php-mbstring php-mysql php-pgsql php-sqlite3 php-apcu php-gd php-fpm 
 
 echo "Checking php version"
 
