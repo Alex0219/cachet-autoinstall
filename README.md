@@ -5,10 +5,10 @@ Make sure that you are able to install PHP 7.0.
 
 How to use:
 ```
-1. git clone https://github.com/Alex0219/cachet-autoinstall.git
-2. cd cachet-autoinstall/
-3. chmod +x ./cachet-install.sh
-4. ./cachet-install.sh
+git clone https://github.com/Alex0219/cachet-autoinstall.git
+cd cachet-autoinstall/
+chmod +x ./cachet-install.sh
+./cachet-install.sh
 ```
 After the installation is complete, visit http://yourip in your browser.
 
