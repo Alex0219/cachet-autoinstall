@@ -71,7 +71,7 @@ cd /var/www/cachet
 
 git clone https://github.com/cachethq/Cachet.git .
 
-git checkout v2.3.18 # Change this value by checking git tag -l
+git checkout v2.4 # Change this value by checking git tag -l
 
 cp .env.example .env
 
