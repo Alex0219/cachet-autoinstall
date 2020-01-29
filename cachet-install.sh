@@ -114,6 +114,8 @@ composer install --no-dev -o
 
 php artisan key:generate
 
+php artisan app:install
+
 sudo chown -R www-data:www-data /var/www/cachet
 
 rm /etc/nginx/sites-enabled/default
