@@ -27,6 +27,8 @@ UPDATE mysql.user SET Password=PASSWORD('$randPassword') WHERE User='root';
 DELETE FROM mysql.user WHERE user='root' AND host NOT IN ('localhost', '127.0.0.1', '::1');
 DELETE FROM mysql.user WHERE user='';
 DROP DATABASE test;
+CREATE DATABASE cachet;
+GRANT ALL ON cachet.* TO 'cachetuser' IDENTIFIED BY '$randPassword';
 FLUSH PRIVILEGES;
 EOF
 
@@ -42,9 +44,6 @@ Username: root
 Password: $randPassword
 EOL
 
-# Create mysql user and database for cachet
-
-mysql -u "root" -p"$randPassword" -e "CREATE DATABASE cachet; GRANT ALL ON cachet.* TO 'cachetuser' IDENTIFIED BY '$randPassword';FLUSH PRIVILEGES;"
 
 # Write nginx config
 
@@ -71,7 +70,7 @@ cd /var/www/cachet
 
 git clone https://github.com/cachethq/Cachet.git .
 
-git checkout v2.4 # Change this value by checking git tag -l
+git checkout v2.3.18 # Change this value by checking git tag -l
 
 cp .env.example .env
 
@@ -89,17 +88,17 @@ DB_PASSWORD=$randPassword
 DB_PORT=null
 DB_PREFIX=null
 
-CACHE_DRIVER=array
-SESSION_DRIVER=array
+CACHE_DRIVER=file
+SESSION_DRIVER=file
 QUEUE_DRIVER=sync
 CACHET_EMOJI=false
 
-MAIL_DRIVER=log
-MAIL_HOST=
+MAIL_DRIVER=smtp
+MAIL_HOST=mailtrap.io
 MAIL_PORT=2525
-MAIL_USERNAME=user
-MAIL_PASSWORD=password
-MAIL_ADDRESS=test@pleasechange.me
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ADDRESS=null
 MAIL_NAME=null
 MAIL_ENCRYPTION=tls
 
